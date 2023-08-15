@@ -1,0 +1,9 @@
+.task {
+  border: 1px solid red;
+  padding: 8px;
+}
+
+.task-column {
+  padding: 10px;
+  border: 1px solid black;
+}
