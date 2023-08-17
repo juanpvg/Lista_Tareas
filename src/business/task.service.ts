@@ -12,3 +12,7 @@ export function filterTodo(list:Task[]){
 export function filterDoing(list:Task[]){
   return list.filter((task)=>task.state=="doing")
 }
+
+export function filterDone(list:Task[]){
+  return list.filter((task)=>task.state=="done")
+}

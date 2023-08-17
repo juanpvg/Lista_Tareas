@@ -1,4 +1,13 @@
-.task-list-container{
-    display: flex;
-    gap: 70px;
+.task-list-container {
+  display: flex;
+  gap: 70px;
+  background: #668995;
+}
+
+.task-list-container H3 {
+  color: #ffffff;
+  text-align: center;
+  vertical-align: center;
+  text-transform: uppercase;
+  text-shadow: 5px 6px 3px black;
 }

@@ -1,9 +1,21 @@
-.task {
-  border: 1px solid red;
-  padding: 8px;
+.task-column {
+  padding: 20px;
+  border: 1px solid #85818c;
+  background: #97a1af;
+  margin-left: 20px;
 }
 
-.task-column {
-  padding: 10px;
-  border: 1px solid black;
+.task {
+  padding: 8px;
+  border: 1px solid #000;
+  background: #efedf3;
+  border: 1px solid #85818c;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(71, 65, 71, 1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(71, 65, 71, 1);
+  box-shadow: 10px 10px 5px 0px rgba(71, 65, 71, 1);
+  margin: 0px 0px 15px 0px;
+}
+.task strong {
+  text-decoration: underline #939ca6;
+  font-weight: bold;
 }
