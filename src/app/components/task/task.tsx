@@ -1,72 +1,56 @@
 "use client";
 
-import { forEachChild } from 'typescript';
-import './style.css'
+import { forEachChild } from "typescript";
+import "./style.css";
 import type { Task } from "@/business/types";
 
 type TasListProps = {
-  value: Task[]
-  title: string
-}
+  value: Task[];
+  title: string;
+};
 
-export function ListColumn(props : TasListProps) {
+export function ListColumn(props: TasListProps) {
+  //console.log(props)
   return (
-    <div >
-       <h3>{props.title}</h3>
-       <div className="task-column">
-        <div className="task-list">
-          {TaskList(props)}
-        </div>
-      </div> 
-
-    </div>
+    <main className="task-column">
+      <div>
+        <strong className="task-column__title">{props.title}</strong>
+        <div className="task-column__number">{props.value.length}</div>
+      </div>
+      <div className="task-column__list">{TaskList(props.value)}</div>
+    </main>
   );
 }
 
-export function TaskList(props: TasListProps){
-  if (props.value.length == 0) {
+export function TaskList(tasks: Task[]) {
+  if (tasks.length == 0) {
     return EmptyTaskListView();
   }
-  //return props.value.map(TaskView)
-  
-  var indents = [];
-  for(let i = 0; i<props.value.length; i++){
-    indents.push( TaskView(props.value[i], props) )
-  }
-  return indents
 
-
+  return tasks.map((task) => {
+    return TaskView(task);
+  });
 }
 
 export function EmptyTaskListView() {
   return <h2> no task </h2>;
 }
 
-const deleteTask = (id : number, props: TasListProps) => {
-  console.log("deleteTask");
-  console.log(props.value);
-  var position = props.value
-    .map(function (e) {
-      return e.id;
-    })
-    .indexOf(id);
-    props.value.splice(position, 1);
+export function TaskView(item: Task) {
 
-  console.log(props.value);
-  TaskList(props)
-};
-
-export function TaskView(item: Task, props : TasListProps) {
   return (
     <div className="task" key={`task-${item.id}`}>
-      <strong>{item.title}</strong>
+      <div>
+        <button className="add-task">+</button>
+      </div>
       <p>{item.resume}</p>
+      <div className="avatar-name">{item.avatr.name}</div>
+
+      <div className="avatar-image"></div>
+
       <span>{item.state}</span>
       <div>
-        <button>Edit</button>
-      </div>
-      <div>
-        <button onClick={() => deleteTask(item.id, props)}>Delete</button>
+        <button >Delete</button>
       </div>
       <div></div>
     </div>

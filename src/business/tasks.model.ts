@@ -6,7 +6,7 @@ const arraytasks = [
     title: "Primera",
     resume: "Esta es la primera",
     avatr: {
-      name: "",
+      name: "UI Desing",
       img: "",
     },
     tags: [1, 2],
@@ -17,7 +17,7 @@ const arraytasks = [
     title: "Segunda",
     resume: "Esta es la Segunda",
     avatr: {
-      name: "",
+      name: "UI Desing",
       img: "",
     },
     tags: [1, 2],
@@ -28,7 +28,7 @@ const arraytasks = [
     title: "Tercera",
     resume: "Esta es la tercera",
     avatr: {
-      name: "",
+      name: "UI Desing",
       img: "",
     },
     tags: [1, 2],
@@ -39,7 +39,7 @@ const arraytasks = [
     title: "Cuarto",
     resume: "Esta es la cuarta",
     avatr: {
-      name: "",
+      name: "UI Desing",
       img: "",
     },
     tags: [1, 2],
@@ -50,12 +50,23 @@ const arraytasks = [
     title: "Quinta",
     resume: "Esta es la quinta",
     avatr: {
-      name: "",
+      name: "UI Desing",
       img: "",
     },
     tags: [1, 2],
     state: "done",
-  } 
+  },
+  {
+    id: 6,
+    title: "Sexta",
+    resume: "Esta es la sexta",
+    avatr: {
+      name: "Ux Desing",
+      img: "",
+    },
+    tags: [1, 2],
+    state: "doing",
+  }  
 ] as Array<Task>;
 
 export default arraytasks;

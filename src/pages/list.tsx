@@ -19,12 +19,15 @@ export default function List() {
   }, [])
 
   return (
-    <div className="task-list-container">
-      
-     <ListColumn value={filterTodo(list)} title="Todo" key='ToDo'></ListColumn>
-     <ListColumn value={filterDoing(list)} title="Doing" key='Doing'></ListColumn>
-     <ListColumn value={filterDone(list)} title="Done" key='Done'></ListColumn>
-
+    <div >
+      <div>
+        <p><b>DASHBOARD</b></p>
+      </div>
+      <main className="task-list-container">
+        <ListColumn value={filterTodo(list)} title="To do" key='ToDo'></ListColumn>
+        <ListColumn value={filterDoing(list)} title="Doing" key='Doing'></ListColumn>
+        <ListColumn value={filterDone(list)} title="Done" key='Done'></ListColumn>
+      </main>
     </div>
   )
 }

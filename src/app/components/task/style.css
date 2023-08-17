@@ -1,21 +1,83 @@
+:root {
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-5: 20px;
+
+  --background-light: #ededed;
+}
+
 .task-column {
-  padding: 20px;
-  border: 1px solid #85818c;
-  background: #97a1af;
+  padding: var(--spacing-5);
+  border: 1px solid var(--background-light);
+  background: #ededed;
   margin-left: 20px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+.task-column__number {
+  display: block;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  border: 1px solid #ababab;
+  background: #ededed;
+  color: #ababab;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 .task {
+  height: 200px;
+  width: 260px;
   padding: 8px;
-  border: 1px solid #000;
-  background: #efedf3;
-  border: 1px solid #85818c;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(71, 65, 71, 1);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(71, 65, 71, 1);
-  box-shadow: 10px 10px 5px 0px rgba(71, 65, 71, 1);
+  border: 1px solid #fbfbfb;
+  background: #fbfbfb;
+  -webkit-box-shadow: 2px 2px 4px 0px ededed;
+  -moz-box-shadow: 2px 2px 4px 0px ededed;
+  box-shadow: 2px 2px 4px 0px ededed;
   margin: 0px 0px 15px 0px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
-.task strong {
-  text-decoration: underline #939ca6;
+.task p {
+  color: #4c4c4c;
+  font-size: 18px;
+}
+.task .add-task {
+  font-size: 20px;
+  height: 30px;
+  background: #dadada;
   font-weight: bold;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.task .add-task:hover {
+  font-size: 30px;
+}
+div.avatar-name {
+  background: rgb(234, 234, 250);
+  font-size: 15px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  font-weight: bold;
+  color: #6b72ea;
+  width: max-content;
+  padding: 2px 5px 2px 4px;
+}
+div.avatar-image {
+  background: #6eeae3;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
 }
