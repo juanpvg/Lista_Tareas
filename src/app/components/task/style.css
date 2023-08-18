@@ -17,8 +17,18 @@
   -webkit-border-radius: 10px;
 }
 
+.task-column__header {
+  display: flow-root;
+  padding-bottom: 15px;
+}
+
+.task-column__title {
+  float: left;
+  color: #7b7b7b;
+}
+
 .task-column__number {
-  display: block;
+  float: right;
   height: 18px;
   width: 18px;
   text-align: center;
@@ -44,23 +54,42 @@
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
-.task p {
+.task__resume {
   color: #4c4c4c;
   font-size: 18px;
+  font-weight: bold;
 }
+
+.task__bottom {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+}
+
+.task__bottomleft {
+  float: left;
+}
+
+.task__bottomright {
+  float: right;
+}
+
 .task .add-task {
   font-size: 20px;
-  height: 30px;
+  height: 36px;
+  width: 100%;
   background: #dadada;
-  font-weight: bold;
+  font-weight: initial;
   text-align: center;
   vertical-align: center;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  border: none;
 }
 .task .add-task:hover {
   font-size: 30px;
+  font-weight: bold;
 }
 div.avatar-name {
   background: rgb(234, 234, 250);
@@ -72,6 +101,7 @@ div.avatar-name {
   color: #6b72ea;
   width: max-content;
   padding: 2px 5px 2px 4px;
+  display: inline-block;
 }
 div.avatar-image {
   background: #6eeae3;
@@ -80,4 +110,21 @@ div.avatar-image {
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
+  display: inline-block;
+}
+
+.icon-container {
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+}
+
+.icon-container .icon {
+  color: #c1c2c3;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }

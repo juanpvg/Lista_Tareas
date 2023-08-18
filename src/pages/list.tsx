@@ -20,9 +20,10 @@ export default function List() {
 
   return (
     <div >
-      <div>
-        <p><b>DASHBOARD</b></p>
+      <div className="header">
+        <p className="header__text"><b>Admin Dashboard</b></p>
       </div>
+      <div className="header_line"></div>
       <main className="task-list-container">
         <ListColumn value={filterTodo(list)} title="To do" key='ToDo'></ListColumn>
         <ListColumn value={filterDoing(list)} title="Doing" key='Doing'></ListColumn>
