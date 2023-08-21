@@ -7,18 +7,43 @@ import type { Task } from "@/business/types";
 import iconSet from "../../../icomoon/selection.json";
 import IcomoonReact, { iconList } from "icomoon-react";
 
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import { useForm, useFieldArray } from "react-hook-form";
+
 type TasListProps = {
   value: Task[];
   title: string;
 };
 
+
 export function ListColumn(props: TasListProps) {
   //console.log(props)
+  //const [list, setList] = useState([]);
+  //setList(currentLists => [..currentList. props.value])
+
+  /*
+  const removeTask = e => {
+    updateList(list.filter(item => item.id !== id));
+  }
+  */
+
+  /*
+  const deleteById = id => {
+    setList(oldValues => {
+      return oldValues.filter(item => item.id !== id)
+    })
+  }
+  */
+
   return (
     <main className="task-column">
       <div className="task-column__header">
         <strong className="task-column__title">{props.title}</strong>
         <div className="task-column__number">{props.value.length}</div>
+      </div>
+      <div>
+        <button className="add-task" >+</button>
       </div>
       <div className="task-column__list">{TaskList(props.value)}</div>
     </main>
@@ -40,14 +65,10 @@ export function EmptyTaskListView() {
 }
 
 export function TaskView(item: Task) {
-
+  
   return (
     <div className="task" key={`task-${item.id}`}>
-      <div>
-        <button className="add-task">+</button>
-      </div>
-      <p className="task__resume">{item.resume}</p>
-      <span>{item.state}</span>
+      <div className="task__resume">{item.resume}</div>
 
       <div className="task__bottom">
         <div className="task__bottom__left">

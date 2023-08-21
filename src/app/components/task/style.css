@@ -2,47 +2,72 @@
   --spacing-1: 4px;
   --spacing-2: 8px;
   --spacing-3: 12px;
-  --spacing-5: 20px;
-
+  --spacing-5: 13px;
   --background-light: #ededed;
+  font-family: system-ui;
+  letter-spacing: -1px;
 }
 
 .task-column {
-  padding: var(--spacing-5);
+  padding: 10px 13px 13px 13px;
   border: 1px solid var(--background-light);
   background: #ededed;
-  margin-left: 20px;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
+  margin-left: 13px;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  font-family: system-ui;
 }
 
 .task-column__header {
   display: flow-root;
-  padding-bottom: 15px;
+  margin-bottom: 13px;
 }
 
 .task-column__title {
   float: left;
   color: #7b7b7b;
+  padding: 2px 0px 5px 0px;
+  font-size: 16px;
+  font-family: system-ui;
 }
 
 .task-column__number {
   float: right;
-  height: 18px;
-  width: 18px;
+  height: 19px;
+  width: 23px;
   text-align: center;
   border: 1px solid #ababab;
   background: #ededed;
   color: #ababab;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding-bottom: 3px;
+}
+
+.add-task {
+  font-size: 20px;
+  height: 36px;
+  width: 100%;
+  margin: 0px 0px 13px 0px;
+  background: #dadada;
+  font-weight: initial;
+  text-align: center;
+  vertical-align: center;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  border: none;
+}
+.add-task:hover {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .task {
-  height: 200px;
-  width: 260px;
+  height: 74px;
+  width: 283px;
   padding: 8px;
   border: 1px solid #fbfbfb;
   background: #fbfbfb;
@@ -50,20 +75,25 @@
   -moz-box-shadow: 2px 2px 4px 0px ededed;
   box-shadow: 2px 2px 4px 0px ededed;
   margin: 0px 0px 15px 0px;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 5px 13px 10px 13px;
+  display: grid;
 }
 .task__resume {
+  margin: 3px 3px 0px 1px;
   color: #4c4c4c;
   font-size: 18px;
-  font-weight: bold;
+  font-family: system-ui;
 }
 
 .task__bottom {
   justify-content: space-between;
   width: 100%;
   display: flex;
+  bottom: -10px;
+  position: relative;
 }
 
 .task__bottomleft {
@@ -74,49 +104,38 @@
   float: right;
 }
 
-.task .add-task {
-  font-size: 20px;
-  height: 36px;
-  width: 100%;
-  background: #dadada;
-  font-weight: initial;
-  text-align: center;
-  vertical-align: center;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border: none;
-}
-.task .add-task:hover {
-  font-size: 30px;
-  font-weight: bold;
-}
 div.avatar-name {
   background: rgb(234, 234, 250);
   font-size: 15px;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  font-weight: bold;
+  font-weight: normal;
   color: #6b72ea;
   width: max-content;
-  padding: 2px 5px 2px 4px;
+  padding: 3px 7px 4px 6px;
   display: inline-block;
+  bottom: 8px;
+  position: relative;
 }
 div.avatar-image {
   background: #6eeae3;
-  height: 30px;
-  width: 30px;
+  height: 26px;
+  width: 26px;
   border-radius: 15px;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
   display: inline-block;
+  margin-left: 7px;
+  margin-top: 5px;
 }
 
 .icon-container {
   width: 1.5em;
   height: 1.5em;
   display: inline-block;
+  bottom: 10px;
+  position: relative;
 }
 
 .icon-container .icon {
