@@ -11,6 +11,8 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useForm, useFieldArray } from "react-hook-form";
 
+import useCounter from '../../hooks/use-counter';
+
 type TasListProps = {
   value: Task[];
   title: string;
@@ -43,7 +45,7 @@ export function ListColumn(props: TasListProps) {
         <div className="task-column__number">{props.value.length}</div>
       </div>
       <div>
-        <button className="add-task" >+</button>
+        <button className="add-task" > {useCounter()} </button>
       </div>
       <div className="task-column__list">{TaskList(props.value)}</div>
     </main>

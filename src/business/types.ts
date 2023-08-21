@@ -10,5 +10,7 @@ export type Task =  {
     resume: string
     tags : Array<any>
     state: "doing" | "todo" | "done"
+    subTask: []
+    spefificDate: ""
 }
 
