@@ -19,25 +19,6 @@ export function filterDone(list:Task[]){
 
 
 //remove
-export function deleteTask(removeItem:Task){
-  console.log("Eliminar:");
-  console.log(removeItem);
-
-  //lista = [...props.value]; // make a separate copy of the array
-  var index = arrayTask.indexOf(removeItem)
-  if (index !== -1) {
-    arrayTask.splice(index, 1);
-    //props.value = array;
-  }
-  /*
-  setLista(current =>
-    current.filter(lista => {
-      return lista.id !== removeItem.id;
-    }),
-  );
-  */
-  //console.log(lista);
-  //console.log(props.value);
-  
-  return arrayTask;
+export function deleteTask(list:Task[], removeItem:Task){
+  return list.filter((task)=>task.id !== removeItem.id)
 };

@@ -18,13 +18,14 @@ import useCounter from '../../hooks/use-counter';
 type TasListProps = {
   value: Task[];
   title: string;
+  removeFunction: Function;
 };
 
 
 
 export function ListColumn(props: TasListProps) {
-  let [lista, setLista] = useState(props.value);
-  lista = [...props.value]; 
+  let [list, setList] = useState(props.value);
+  list = [...props.value]; 
   /*
   console.log("Lista");
   console.log(lista);
@@ -35,39 +36,24 @@ export function ListColumn(props: TasListProps) {
   const removeTask = (removeItem:Task) => {
     console.log("Eliminar:");
     console.log(removeItem);
-    //lista = [...props.value]; // make a separate copy of the array
-    
-    
     var index = props.value.indexOf(removeItem)
     if (index !== -1) {
       props.value.splice(index, 1);
     }
-    //lista = deleteTask(removeItem); 
-    //lista = [...props.value]; 
+    let tempTask: Task[];
     
-   
-    let tempTask: Task;
-    setLista({lista: lista.filter(function(lista) { 
-      tempTask = lista;
-      return tempTask.id == removeItem.id 
-      //return tarea.id !== removeItem.id 
+    setList({tempTask: list.filter(function(item) { 
+      return item.id !== removeItem.id 
     })});
     
-    
-    /*
-    const result = lista.filter(function(lista) { 
-      tarea = lista;
-      return tarea.id !== removeItem.id 
-    });
-    console.log(result);
-    */
-    //lista = [...props.value]; 
-    //setLista(props.value);
-
+    tempTask = list.filter(function(item) { 
+      return item.id !== removeItem.id 
+    })
+    console.log(tempTask);
+    list = [...tempTask]; 
     console.log("final:");
-    console.log(lista);
+    console.log(list);
     console.log(props.value);
-    //console.log(props.value);
   };
 
   // funcion ejemplo
@@ -80,12 +66,12 @@ export function ListColumn(props: TasListProps) {
     <main className="task-column">
       <div className="task-column__header">
         <strong className="task-column__title">{props.title}</strong>
-        <div className="task-column__number">{lista.length}</div>
+        <div className="task-column__number">{props.value.length}</div>
       </div>
       <div>
         <Jpbutton isLong={true} doSomething={doSomething} ></Jpbutton>
       </div>
-      <div className="task-column__list">{TaskList(lista, removeTask )}</div>
+      <div className="task-column__list">{TaskList(props.value, props.removeFunction )}</div>
     </main>
   );
 }
