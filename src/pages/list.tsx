@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import {getTaskList, filterTodo, filterDoing, filterDone} from "@/business/task.service"
 
-import { ListColumn } from "@/app/components/task/task"
+import { ListColumn } from "@/app/components/ListGeneral/ListGeneral"
 import { Task } from "@/business/types";
 
 export default function List() {
@@ -25,7 +25,7 @@ export default function List() {
           <b>Admin Dashboard</b>
         </div>
       </div>
-      <div className="header_line"></div>
+      <div className="header-line"></div>
       <main className="task-list-container">
         <ListColumn value={filterTodo(list)} title="To Do" key='Todo'></ListColumn>
         <ListColumn value={filterDoing(list)} title="In Progress" key='Doing'></ListColumn>

@@ -4,6 +4,7 @@ export type Avatr = {
 }
 
 export type Task =  {
+    singleTask: any
     id: number
     title: string
     avatr: Avatr
@@ -12,5 +13,6 @@ export type Task =  {
     state: "doing" | "todo" | "done"
     subTask: []
     spefificDate: ""
+    messages: []
 }
 

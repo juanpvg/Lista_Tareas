@@ -1,0 +1,48 @@
+:root {
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-5: 13px;
+  --background-light: #ededed;
+  font-family: system-ui;
+  letter-spacing: -1px;
+}
+
+.task-column {
+  width: 310px;
+  padding: 10px 13px 13px 13px;
+  border: 1px solid var(--background-light);
+  background: #ededed;
+  margin-left: 13px;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  font-family: system-ui;
+}
+
+.task-column__header {
+  display: flow-root;
+  margin-bottom: 13px;
+}
+
+.task-column__title {
+  float: left;
+  color: #7b7b7b;
+  padding: 2px 0px 5px 0px;
+  font-size: 16px;
+  font-family: system-ui;
+}
+
+.task-column__number {
+  float: right;
+  height: 19px;
+  width: 23px;
+  text-align: center;
+  border: 1px solid #ababab;
+  background: #ededed;
+  color: #ababab;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding-bottom: 3px;
+}
