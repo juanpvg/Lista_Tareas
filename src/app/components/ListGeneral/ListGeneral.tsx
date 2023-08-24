@@ -45,7 +45,7 @@ export function ListColumn(props: TasListProps) {
         <div className="task-column__number">{props.value.length}</div>
       </div>
       <div>
-        <Jpbutton isLong={true} doSomething={doSomething} ></Jpbutton>
+        <Jpbutton isLong={true} executeFunction={doSomething} ></Jpbutton>
       </div>
       <div className="task-column__list">{TaskList(props.value, props.removeFunction )}</div>
     </main>

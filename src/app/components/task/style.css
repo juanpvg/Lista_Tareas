@@ -78,7 +78,8 @@ div.avatar-image {
   height: 1.5em;
   display: inline-block;
   bottom: 10px;
-  position: relative;
+  position: initial;
+  margin: 5px 0px 5px 10px;
 }
 
 .icon-container__icon {
@@ -93,4 +94,6 @@ div.avatar-image {
 
 .icon-container__icon:hover {
   cursor: pointer;
+  font-weight: bold;
+  color: black;
 }
