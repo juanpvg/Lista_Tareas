@@ -32,30 +32,6 @@ export function ListColumn(props: TasListProps) {
   console.log(props);
   */
   
-
-  const removeTask = (removeItem:Task) => {
-    console.log("Eliminar:");
-    console.log(removeItem);
-    var index = props.value.indexOf(removeItem)
-    if (index !== -1) {
-      props.value.splice(index, 1);
-    }
-    let tempTask: Task[];
-    
-    setList({tempTask: list.filter(function(item) { 
-      return item.id !== removeItem.id 
-    })});
-    
-    tempTask = list.filter(function(item) { 
-      return item.id !== removeItem.id 
-    })
-    console.log(tempTask);
-    list = [...tempTask]; 
-    console.log("final:");
-    console.log(list);
-    console.log(props.value);
-  };
-
   // funcion ejemplo
   const doSomething = (param:string) => {
     console.log("función " + param);
@@ -76,7 +52,7 @@ export function ListColumn(props: TasListProps) {
   );
 }
 
-export function TaskList(tasks: Task[], removeTask:any) {
+export function TaskList(tasks: Task[], removeTask:Function) {
   if (tasks.length == 0) {
     return EmptyTaskListView();
   }

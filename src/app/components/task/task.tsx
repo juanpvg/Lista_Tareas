@@ -11,15 +11,13 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 
-type TasListProps = {
-  value: Task[];
-  title: string;
+type TaskProps = {
+    singleTask: Task;
+    removeTask: Function;
 };
 
-export function TaskView(props:any) {
+export function TaskView(props:TaskProps) {
     const item = props.singleTask;
-    //console.log('tarea');
-    //console.log(item);
     return (
     <div className="task" key={`task-${item.id}`}>
         <div className="task__resume">{item.resume}</div>
@@ -32,10 +30,10 @@ export function TaskView(props:any) {
         
         <div className="task__bottom__right">
             <div className="icon-container">
-            <IcomoonReact className="icon" iconSet={iconSet} icon="trash-can" onClick={()=> props.removeTask(item)} />
+            <IcomoonReact className="icon-container__icon" iconSet={iconSet} icon="trash-can" onClick={()=> props.removeTask(item)} />
             </div>
             <div className="icon-container">
-            <IcomoonReact className="icon" iconSet={iconSet} icon="repeat" />
+            <IcomoonReact className="icon-container__icon" iconSet={iconSet} icon="repeat" />
             </div>
         </div>
         

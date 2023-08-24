@@ -81,7 +81,7 @@ div.avatar-image {
   position: relative;
 }
 
-.icon-container .icon {
+.icon-container__icon {
   color: #c1c2c3;
   display: inline-block;
   width: 1.5em;
@@ -89,4 +89,8 @@ div.avatar-image {
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+}
+
+.icon-container__icon:hover {
+  cursor: pointer;
 }
