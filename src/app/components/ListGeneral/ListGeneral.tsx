@@ -4,9 +4,13 @@ import {deleteTask} from "@/business/task.service"
 
 import { forEachChild } from "typescript";
 import "./style.css";
+
+import "../form-new-task/style.css";
+
 import type { Task } from "@/business/types";
 import { Jpbutton } from "@/app/components/assets/button/button";
 import { TaskView } from "@/app/components/task/Task";
+import { FormNewTask } from "@/app/components/form-new-task/formNewTask";
 
 
 import React, { useState } from "react";
@@ -18,7 +22,9 @@ import useCounter from '../../hooks/use-counter';
 type TasListProps = {
   value: Task[];
   title: string;
+  stateList: string;
   removeFunction: Function;
+  showFormNewTaskFunction: Function;
 };
 
 
@@ -37,6 +43,8 @@ export function ListColumn(props: TasListProps) {
     console.log("función " + param);
   };
 
+
+
   //console.log(props)
   return (
     <main className="task-column">
@@ -45,27 +53,33 @@ export function ListColumn(props: TasListProps) {
         <div className="task-column__number">{props.value.length}</div>
       </div>
       <div>
-        <Jpbutton isLong={true} executeFunction={doSomething} ></Jpbutton>
+        <Jpbutton isLong={true} executeFunction={props.showFormNewTaskFunction} ></Jpbutton>
       </div>
       <div className="task-column__list">{TaskList(props.value, props.removeFunction )}</div>
     </main>
   );
 }
 
-export function TaskList(tasks: Task[], removeTask:Function) {
+export function TaskList(tasks: Task[], removeTaskFunction:Function) {
   if (tasks.length == 0) {
     return EmptyTaskListView();
   }
-
   return tasks.map((task) => {
     //return TaskView;
     return(
-      <TaskView singleTask={task} key={task.id} removeTask={removeTask} ></TaskView>
+      <TaskView singleTask={task} key={task.id} removeTask={removeTaskFunction} ></TaskView>
     );
   });
 }
-
 export function EmptyTaskListView() {
   return <h2> no task </h2>;
 }
 
+
+export function createNewTask() {
+  console.log("form nueva tarea");
+  //return <formNewTask  > </formNewTask>;
+  return(
+    <FormNewTask  > </FormNewTask>
+  );
+}

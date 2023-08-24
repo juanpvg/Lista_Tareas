@@ -1,5 +1,3 @@
-"use client";
-
 import { forEachChild } from "typescript";
 import "./style.css";
 import type { Task } from "@/business/types";

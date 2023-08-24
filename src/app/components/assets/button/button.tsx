@@ -13,6 +13,6 @@ export function Jpbutton(props:buttonProps) {
   //const { isLong } = props;
 
   return (
-    <button  className={`btn ${props.isLong ? "long" : "short"}`} onClick={()=> props.executeFunction("hola")}>+</button>
+    <button  className={`btn ${props.isLong ? "long" : "short"}`} onClick={()=> props.executeFunction()}>+</button>
   )
 }
