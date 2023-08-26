@@ -12,6 +12,7 @@ import ReactDOM from "react-dom";
 type TaskProps = {
     singleTask: Task;
     removeTask: Function;
+    updateTask: Function;
 };
 
 export function TaskView(props:TaskProps) {
@@ -31,7 +32,7 @@ export function TaskView(props:TaskProps) {
             <IcomoonReact className="icon-container__icon" iconSet={iconSet} icon="trash-can" onClick={()=> props.removeTask(item)} />
             </div>
             <div className="icon-container">
-            <IcomoonReact className="icon-container__icon" iconSet={iconSet} icon="repeat" />
+            <IcomoonReact className="icon-container__icon" iconSet={iconSet} icon="repeat" onClick={()=> props.updateTask(item)} />
             </div>
         </div>
         

@@ -12,13 +12,14 @@ import ReactDOM from "react-dom";
 
 
 type newTaskProps = {
-  createTaskFunction: Function;
+  currentTask: Task;
+  taskFunction: Function;
 };
 
 export function FormNewTask(props: newTaskProps) {
-  //let [newTask, setNewTask] = useState(Task);
-  let newTask: Task;
-  newTask = createNewEmptyTask();
+  let [newTask, setNewTask] = useState(props.currentTask);
+  //let newTask: Task;
+  //newTask = props.currentTask;
 
   const options = [
     { value: 'todo', label: 'To do' },
@@ -56,7 +57,7 @@ export function FormNewTask(props: newTaskProps) {
             {optionsList(options)}
           </select>
         </div>
-        <button type="submit" className="submit-btn" onClick={()=> props.createTaskFunction(newTask)}>
+        <button type="submit" className="submit-btn" onClick={()=> props.taskFunction(newTask)}>
           Save Task
         </button>
       </form>
@@ -65,30 +66,7 @@ export function FormNewTask(props: newTaskProps) {
   );
 }
 
-export function createNewEmptyTask() {
-  let tempTask: Task
-  tempTask = {
-    id: 1,
-    title: "",
-    resume: "",
-    avatr: {
-      name: "UI Desing",
-      img: "",
-    },
-    tags: [],
-    state: "todo"
-  }
-  return tempTask;
-}
-
-
 export function optionsList(options:any) {
-  /*
-  {options.map(options => {
-    return (<option key={options.value} value={options.value}>{options.label}</option>);
-  })}
-  */
-
   return options.map(options => {
     return (<option key={options.value} value={options.value}>{options.label}</option>);
   })

@@ -2,7 +2,7 @@ import "../pages/global.css"
 import React, { useEffect, useState } from 'react';
 
 
-import {getTaskList, filterTodo, filterDoing, filterDone, deleteTask, addTask } from "@/business/task.service"
+import {getTaskList, filterTodo, filterDoing, filterDone, deleteTask, addTask, updateCurrentTask, createNewEmptyTask } from "@/business/task.service"
 
 import { ListColumn } from "@/app/components/ListGeneral/ListGeneral"
 import { Task } from "@/business/types";
@@ -11,7 +11,10 @@ import { FormNewTask } from "@/app/components/form-new-task/formNewTask";
 
 export default function List() {
   let [list, setList] = useState<Array<Task>>([]);
-  let [showList, setShowList] = useState(false);
+  let [showCreate, setShowCreate] = useState(false);
+  let [showUpdate, setShowUpdate] = useState(false);
+
+  let [currentTask, setCurrentTask]= useState({});
 
   useEffect(() => {
     const fetchTask = async ()=>{
@@ -25,24 +28,45 @@ export default function List() {
     setList(deleteTask(list, removeItem));
   }
 
-  const showFormNewTask = (newItem:Task) => {
-    setShowList(true);
-    console.log(showList);
+  const showFormNewTask = () => {
+    console.log("create form");
+    setShowCreate(true);
+  }
+  
+  const showFormUpdateTask = (item:Task) => {
+    console.log("update form");
+    console.log(item);
+
+    //currentTask = item;
+    setCurrentTask(item);
+
+    console.log(currentTask);
+    setShowUpdate(true);
   }
 
-  const hideFormNewTask = (newItem:Task) => {
-    setShowList(false);
-    console.log(showList);
+  const hideFormNewTask = () => {
+    setShowCreate(false);
+    setShowUpdate(false);
   }
 
   const createTask = (newItem:Task) => {
-    console.log("boton crear tarea")
+    console.log("boton crear tarea");
     setList(addTask(list, newItem));
-    setShowList(false);
+    hideFormNewTask();
+    console.log(list);
   }
+  
+  const updateTask = (item:Task) => {
+    console.log("actualizar tarea");
+    setList(updateCurrentTask(list, item));
+    hideFormNewTask();
+    console.log(list);
+  }
+
   return (
     <div className="general-container">
-      {showForm(showList, createTask, hideFormNewTask)}
+      {showFormCreate(showCreate, createTask, hideFormNewTask)}
+      {showFormUpdate(showUpdate, currentTask, updateTask, hideFormNewTask)}
     
       <div className="general-list">
         <div className="header">
@@ -52,9 +76,9 @@ export default function List() {
         </div>
         <div className="header-line"></div>
         <main className="task-list-container">
-          <ListColumn value={filterTodo(list)} title="To Do" key='Todo' stateList="todo" removeFunction={removeTask} showFormNewTaskFunction={showFormNewTask} ></ListColumn>
-          <ListColumn value={filterDoing(list)} title="In Progress" key='Doing' stateList="doing" removeFunction={removeTask} showFormNewTaskFunction={showFormNewTask}></ListColumn>
-          <ListColumn value={filterDone(list)} title="Review" key='Done' stateList="done" removeFunction={removeTask} showFormNewTaskFunction={showFormNewTask}></ListColumn>
+          <ListColumn value={filterTodo(list)} title="To Do" key='Todo' stateList="todo" removeFunction={removeTask} updateFunction={showFormUpdateTask} showFormNewTaskFunction={showFormNewTask} ></ListColumn>
+          <ListColumn value={filterDoing(list)} title="In Progress" key='Doing' stateList="doing" removeFunction={removeTask} updateFunction={showFormUpdateTask} showFormNewTaskFunction={showFormNewTask}></ListColumn>
+          <ListColumn value={filterDone(list)} title="Review" key='Done' stateList="done" removeFunction={removeTask} updateFunction={showFormUpdateTask} showFormNewTaskFunction={showFormNewTask}></ListColumn>
         </main>
     </div>
     </div>
@@ -63,12 +87,29 @@ export default function List() {
 }
 
 
-export function showForm(showList:boolean, createTask:Function, hideFormNewTask:Function) {
-  if (showList) {
+export function showFormCreate(show:boolean, taskFunction:Function, hideFormNewTask:Function) {
+  let currentTask: Task;
+  currentTask = createNewEmptyTask();
+  if (show) {
     return(
       <><div className="background-task" ></div>
       <div className="new-task-form-container">
-        <FormNewTask createTaskFunction={createTask}> </FormNewTask>
+        <FormNewTask currentTask={currentTask}  taskFunction={taskFunction}> </FormNewTask>
+      </div></>
+    );
+  }
+  else {
+    return("");
+  }
+}
+
+export function showFormUpdate(show:boolean, item:Task, taskFunction:Function, hideFormNewTask:Function) {
+  console.log("tarea a actualizar: ", item);
+  if (show) {
+    return(
+      <><div className="background-task" ></div>
+      <div className="new-task-form-container">
+        <FormNewTask currentTask={item} taskFunction={taskFunction}> </FormNewTask>
       </div></>
     );
   }

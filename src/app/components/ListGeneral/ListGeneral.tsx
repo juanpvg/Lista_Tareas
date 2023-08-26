@@ -24,6 +24,7 @@ type TasListProps = {
   title: string;
   stateList: string;
   removeFunction: Function;
+  updateFunction: Function;
   showFormNewTaskFunction: Function;
 };
 
@@ -55,19 +56,19 @@ export function ListColumn(props: TasListProps) {
       <div>
         <Jpbutton isLong={true} executeFunction={props.showFormNewTaskFunction} ></Jpbutton>
       </div>
-      <div className="task-column__list">{TaskList(props.value, props.removeFunction )}</div>
+      <div className="task-column__list">{TaskList(props.value, props.removeFunction, props.updateFunction )}</div>
     </main>
   );
 }
 
-export function TaskList(tasks: Task[], removeTaskFunction:Function) {
+export function TaskList(tasks: Task[], removeTaskFunction:Function, updateTask:Function) {
   if (tasks.length == 0) {
     return EmptyTaskListView();
   }
   return tasks.map((task) => {
     //return TaskView;
     return(
-      <TaskView singleTask={task} key={task.id} removeTask={removeTaskFunction} ></TaskView>
+      <TaskView singleTask={task} key={task.id} removeTask={removeTaskFunction} updateTask={updateTask} ></TaskView>
     );
   });
 }
