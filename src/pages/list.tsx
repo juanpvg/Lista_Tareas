@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import {getTaskList, filterTodo, filterDoing, filterDone, deleteTask, addTask, updateCurrentTask, createNewEmptyTask } from "@/business/task.service"
 
-import { ListColumn } from "@/app/components/ListGeneral/ListGeneral"
+import { ListColumn } from "@/app/components/list-general/list-general"
 import { Task } from "@/business/types";
 
 import { FormNewTask } from "@/app/components/form-new-task/formNewTask";
@@ -94,7 +94,7 @@ export function showFormCreate(show:boolean, taskFunction:Function, hideFormNewT
     return(
       <><div className="background-task" ></div>
       <div className="new-task-form-container">
-        <FormNewTask currentTask={currentTask}  taskFunction={taskFunction}> </FormNewTask>
+        <FormNewTask currentTask={currentTask}  taskFunction={taskFunction} cancelFunction={hideFormNewTask}> </FormNewTask>
       </div></>
     );
   }
@@ -109,7 +109,7 @@ export function showFormUpdate(show:boolean, item:Task, taskFunction:Function, h
     return(
       <><div className="background-task" ></div>
       <div className="new-task-form-container">
-        <FormNewTask currentTask={item} taskFunction={taskFunction}> </FormNewTask>
+        <FormNewTask currentTask={item} taskFunction={taskFunction} cancelFunction={hideFormNewTask}> </FormNewTask>
       </div></>
     );
   }

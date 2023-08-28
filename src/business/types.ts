@@ -1,6 +1,7 @@
 export type Avatr = {
     name: string
     img: string
+    role: string
 }
 
 export type Task =  {

@@ -9,7 +9,7 @@ import "../form-new-task/style.css";
 
 import type { Task } from "@/business/types";
 import { Jpbutton } from "@/app/components/assets/button/button";
-import { TaskView } from "@/app/components/task/Task";
+import { TaskView } from "@/app/components/task/task";
 import { FormNewTask } from "@/app/components/form-new-task/formNewTask";
 
 
@@ -51,7 +51,9 @@ export function ListColumn(props: TasListProps) {
     <main className="task-column">
       <div className="task-column__header">
         <strong className="task-column__title">{props.title}</strong>
-        <div className="task-column__number">{props.value.length}</div>
+        <div className="task-column__number">
+          <p>{props.value.length}</p>
+        </div>
       </div>
       <div>
         <Jpbutton isLong={true} executeFunction={props.showFormNewTaskFunction} ></Jpbutton>
@@ -77,10 +79,3 @@ export function EmptyTaskListView() {
 }
 
 
-export function createNewTask() {
-  console.log("form nueva tarea");
-  //return <formNewTask  > </formNewTask>;
-  return(
-    <FormNewTask  > </FormNewTask>
-  );
-}

@@ -25,12 +25,17 @@
   display: grid;
 }
 .task__resume {
-  margin: 3px 3px 0px 1px;
+  margin: 0px 3px 0px 1px;
   color: #4c4c4c;
-  font-size: 18px;
+  font-size: 1em;
   font-family: system-ui;
 }
-
+.task__tags {
+  margin: 0px 3px 0px 1px;
+  color: #4c4c4c;
+  font-size: 0.8em;
+  font-family: system-ui;
+}
 .task__bottom {
   justify-content: space-between;
   width: 100%;
@@ -85,8 +90,8 @@ div.avatar-image {
 .icon-container__icon {
   color: #c1c2c3;
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.3em;
+  height: 1.3em;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;

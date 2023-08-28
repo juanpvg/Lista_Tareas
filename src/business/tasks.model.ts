@@ -6,10 +6,11 @@ const arraytasks = [
     title: "Primera",
     resume: "Esta es la primera",
     avatr: {
-      name: "UI Desing",
+      name: "",
       img: "",
+      role: "UI Desing"
     },
-    tags: [1, 2],
+    tags: ["New", 1, "Status"],
     state: "todo",
   },
   {
@@ -17,10 +18,11 @@ const arraytasks = [
     title: "Segunda",
     resume: "Esta es la Segunda",
     avatr: {
-      name: "UI Desing",
+      name: "",
       img: "",
+      role: "UI Desing"
     },
-    tags: [1, 2],
+    tags: ["New", 1, "Status"],
     state: "doing",
   },
   {
@@ -28,10 +30,11 @@ const arraytasks = [
     title: "Tercera",
     resume: "Esta es la tercera",
     avatr: {
-      name: "UI Desing",
+      name: "",
       img: "",
+      role: "UI Desing"
     },
-    tags: [1, 2],
+    tags: ["New", 1, "Status"],
     state: "todo",
   },
   {
@@ -39,10 +42,11 @@ const arraytasks = [
     title: "Cuarto",
     resume: "Esta es la cuarta",
     avatr: {
-      name: "UI Desing",
+      name: "",
       img: "",
+      role: "UI Desing"
     },
-    tags: [1, 2],
+    tags: ["New", 1, "Status"],
     state: "todo",
   },
   {
@@ -50,10 +54,11 @@ const arraytasks = [
     title: "Quinta",
     resume: "Esta es la quinta",
     avatr: {
-      name: "UI Desing",
+      name: "",
       img: "",
+      role: "UI Desing"
     },
-    tags: [1, 2],
+    tags: ["New", 1, "Status"],
     state: "done",
   },
   {
@@ -63,8 +68,9 @@ const arraytasks = [
     avatr: {
       name: "Ux Desing",
       img: "",
+      role: "UI Desing"
     },
-    tags: [1, 2],
+    tags: ["New", 1, "Status"],
     state: "doing",
   }  
 ] as Array<Task>;
