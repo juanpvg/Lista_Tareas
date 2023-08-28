@@ -20,7 +20,12 @@ export function TaskView(props:TaskProps) {
     const tags = item.tags.join(' ');
     return (
     <div className="task" key={`task-${item.id}`}>
-        <div className="task__resume">{item.resume}</div>
+        <div className="task__bottom">
+            <div className="task__resume">{item.resume}</div>
+            <div className="icon-container">
+            <IcomoonReact className="icon-container__icon" iconSet={iconSet} icon="edit" onClick={()=> props.updateTask(item)} />
+            </div>
+        </div>
         <div className="task__tags">{tags}</div>
 
         <div className="task__bottom">
@@ -32,9 +37,6 @@ export function TaskView(props:TaskProps) {
         <div className="task__bottom__right">
             <div className="icon-container">
             <IcomoonReact className="icon-container__icon" iconSet={iconSet} icon="trash-can" onClick={()=> props.removeTask(item)} />
-            </div>
-            <div className="icon-container">
-            <IcomoonReact className="icon-container__icon" iconSet={iconSet} icon="repeat" onClick={()=> props.updateTask(item)} />
             </div>
         </div>
         

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import { useForm, useFieldArray } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
+//import { DevTool } from "@hookform/devtools";
 
 //const { register, control, handleSubmit, formState, watch } = form;
 //const { errors } = formState;

@@ -14,7 +14,7 @@ export default function List() {
   let [showCreate, setShowCreate] = useState(false);
   let [showUpdate, setShowUpdate] = useState(false);
 
-  let [currentTask, setCurrentTask]= useState({});
+  let [currentTask, setCurrentTask]= useState(createNewEmptyTask());
 
   useEffect(() => {
     const fetchTask = async ()=>{
@@ -88,13 +88,12 @@ export default function List() {
 
 
 export function showFormCreate(show:boolean, taskFunction:Function, hideFormNewTask:Function) {
-  let currentTask: Task;
-  currentTask = createNewEmptyTask();
+  let tempTask: Task;
+  tempTask = createNewEmptyTask();
   if (show) {
     return(
-      <><div className="background-task" ></div>
-      <div className="new-task-form-container">
-        <FormNewTask currentTask={currentTask}  taskFunction={taskFunction} cancelFunction={hideFormNewTask}> </FormNewTask>
+      <><div className="background-task"></div><div className="new-task-form-container">
+        <FormNewTask currentTask={tempTask} taskFunction={taskFunction} cancelFunction={hideFormNewTask} />
       </div></>
     );
   }
@@ -109,7 +108,7 @@ export function showFormUpdate(show:boolean, item:Task, taskFunction:Function, h
     return(
       <><div className="background-task" ></div>
       <div className="new-task-form-container">
-        <FormNewTask currentTask={item} taskFunction={taskFunction} cancelFunction={hideFormNewTask}> </FormNewTask>
+        <FormNewTask currentTask={item} taskFunction={taskFunction} cancelFunction={hideFormNewTask} />
       </div></>
     );
   }

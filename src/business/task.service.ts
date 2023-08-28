@@ -54,6 +54,7 @@ export function createNewEmptyTask() {
     avatr: {
       name: "",
       img: "",
+      role: ""
     },
     tags: [],
     state: "todo"

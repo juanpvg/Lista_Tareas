@@ -1,3 +1,4 @@
+/*
 class SomeComponent extends Component{
 
     constructor(props){
@@ -28,3 +29,4 @@ class ChildComponent2{
   return (<Button onClick={()=>this.props.myFunction(param)}>SomeButton</Button>)
     }
 }
+*/

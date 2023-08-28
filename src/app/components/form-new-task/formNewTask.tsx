@@ -9,6 +9,7 @@ import IcomoonReact, { iconList } from "icomoon-react";
 
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { Options } from "next/dist/server/base-server";
 
 
 type newTaskProps = {
@@ -17,6 +18,12 @@ type newTaskProps = {
   cancelFunction: Function;
 };
 
+const options = [
+  { value: 'todo', label: 'To do' },
+  { value: 'doing', label: 'In progress' },
+  { value: 'done', label: 'Done' }
+];
+
 export function FormNewTask(props: newTaskProps) {
   let [newTask, setNewTask] = useState(props.currentTask);
   //let newTask: Task;
@@ -24,12 +31,6 @@ export function FormNewTask(props: newTaskProps) {
 
   
   //const tags = item.tags.split(' ');
-
-  const options = [
-    { value: 'todo', label: 'To do' },
-    { value: 'doing', label: 'In progress' },
-    { value: 'done', label: 'Done' }
-  ];
 
   const setTitle = (param:string) => {
     newTask.title = param;
@@ -40,8 +41,19 @@ export function FormNewTask(props: newTaskProps) {
   };
   
   const setState = (param:string) => {
-    newTask.state= param;
-    //console.log(newTask.state);
+    if(param == "todo"){
+      newTask.state= "todo";
+    }
+    else if(param == "doing"){
+      newTask.state= "doing";
+    }
+    else if(param == "done"){
+      newTask.state= "done";
+    }
+    else{
+      console.log("You can not save the state");
+    }
+    
   };
   
   const setAvatarTags = (param:string) => {
@@ -95,9 +107,9 @@ export function FormNewTask(props: newTaskProps) {
   );
 }
 
-export function optionsList(options:any) {
-  return options.map(options => {
-    return (<option key={options.value} value={options.value}>{options.label}</option>);
+export function optionsList(list:any) {
+  return options.map(list => {
+    return (<option key={list.value} value={list.value}>{list.label}</option>);
   })
 }
 
