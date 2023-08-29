@@ -29,18 +29,11 @@ export default function List() {
   }
 
   const showFormNewTask = () => {
-    console.log("create form");
     setShowCreate(true);
   }
   
   const showFormUpdateTask = (item:Task) => {
-    console.log("update form");
-    console.log(item);
-
-    //currentTask = item;
     setCurrentTask(item);
-
-    console.log(currentTask);
     setShowUpdate(true);
   }
 
@@ -50,17 +43,13 @@ export default function List() {
   }
 
   const createTask = (newItem:Task) => {
-    console.log("boton crear tarea");
     setList(addTask(list, newItem));
     hideFormNewTask();
-    console.log(list);
   }
   
   const updateTask = (item:Task) => {
-    console.log("actualizar tarea");
     setList(updateCurrentTask(list, item));
     hideFormNewTask();
-    console.log(list);
   }
 
   return (
@@ -103,7 +92,6 @@ export function showFormCreate(show:boolean, taskFunction:Function, hideFormNewT
 }
 
 export function showFormUpdate(show:boolean, item:Task, taskFunction:Function, hideFormNewTask:Function) {
-  console.log("tarea a actualizar: ", item);
   if (show) {
     return(
       <><div className="background-task" ></div>

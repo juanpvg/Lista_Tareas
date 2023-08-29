@@ -1,5 +1,6 @@
 import "./style.css";
 import type { Task } from "@/business/types";
+import { optionState } from "@/app/components/const/data-const";
 
 import { forEachChild } from "typescript";
 import "./style.css";
@@ -17,12 +18,6 @@ type newTaskProps = {
   taskFunction: Function;
   cancelFunction: Function;
 };
-
-const options = [
-  { value: 'todo', label: 'To do' },
-  { value: 'doing', label: 'In progress' },
-  { value: 'done', label: 'Done' }
-];
 
 export function FormNewTask(props: newTaskProps) {
   let [newTask, setNewTask] = useState(props.currentTask);
@@ -81,7 +76,7 @@ export function FormNewTask(props: newTaskProps) {
         <div className="input-group">
           <label htmlFor="state">State</label>
           <select name="state" id="state" required autoFocus form="newTaskForm" onChange={e => setState(e.target.value)}>
-            {optionsList(options)}
+            {optionsList(optionState)}
           </select>
         </div>
         
@@ -107,9 +102,9 @@ export function FormNewTask(props: newTaskProps) {
   );
 }
 
-export function optionsList(list:any) {
-  return options.map(list => {
-    return (<option key={list.value} value={list.value}>{list.label}</option>);
+export function optionsList(listOptions:[]) {
+  return listOptions.map(listOptions => {
+    return (<option key={listOptions.value} value={listOptions.value}>{listOptions.label}</option>);
   })
 }
 
