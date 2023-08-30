@@ -51,7 +51,7 @@ export function tagsList(item:Task) {
     const tagsList = item.tags;
     return tagsList.map(tagsList => {
         return (
-            <div className="tags-list__item">{tagsList}</div>
+            <div key="" className="tags-list__item">{tagsList}</div>
         );
     })
 }

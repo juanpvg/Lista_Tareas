@@ -1,6 +1,6 @@
 import "./style.css";
 import type { Task } from "@/business/types";
-import { optionState } from "@/app/components/const/data-const";
+import { optionState, TypeOptionState } from "@/app/components/const/data-const";
 
 import { forEachChild } from "typescript";
 import "./style.css";
@@ -102,8 +102,9 @@ export function FormNewTask(props: newTaskProps) {
   );
 }
 
-export function optionsList(listOptions:[]) {
-  return listOptions.map(listOptions => {
+export function optionsList(listOptionssss:{}) {
+  let listOptions: TypeOptionState;
+  return optionState.map(listOptions => {
     return (<option key={listOptions.value} value={listOptions.value}>{listOptions.label}</option>);
   })
 }
