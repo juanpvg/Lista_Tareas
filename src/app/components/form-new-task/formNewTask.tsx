@@ -102,7 +102,7 @@ export function FormNewTask(props: newTaskProps) {
   );
 }
 
-export function optionsList(listOptionssss:{}) {
+export function optionsList(listOptionss:{}) {
   let listOptions: TypeOptionState;
   return optionState.map(listOptions => {
     return (<option key={listOptions.value} value={listOptions.value}>{listOptions.label}</option>);

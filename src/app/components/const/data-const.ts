@@ -1,3 +1,7 @@
+
+
+export const image_avatar_folder = '/img/avatar/';
+
 export type TypeOptionState = {
     value: string
     label: string

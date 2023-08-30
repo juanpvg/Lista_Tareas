@@ -7,7 +7,7 @@ const arraytasks = [
     resume: "Esta es la primera",
     avatr: {
       name: "",
-      img: "",
+      img: "png-transparent-round-gold-frame-illustration.png",
       role: "UI Desing"
     },
     tags: ["New", 1, "Status"],
@@ -19,7 +19,7 @@ const arraytasks = [
     resume: "Esta es la Segunda",
     avatr: {
       name: "",
-      img: "",
+      img: "png-transparent-round-yellow-illustration-material-yellow-circle-chinese-style-round.png",
       role: "UI Desing"
     },
     tags: ["New", 1, "Status"],
@@ -31,7 +31,7 @@ const arraytasks = [
     resume: "Esta es la tercera",
     avatr: {
       name: "",
-      img: "",
+      img: "png-transparent-round.png",
       role: "UI Desing"
     },
     tags: ["New", 1, "Status"],
@@ -43,7 +43,7 @@ const arraytasks = [
     resume: "Esta es la cuarta",
     avatr: {
       name: "",
-      img: "",
+      img: "prueba.png",
       role: "UI Desing"
     },
     tags: ["New", 1, "Status"],
@@ -55,10 +55,10 @@ const arraytasks = [
     resume: "Esta es la quinta",
     avatr: {
       name: "",
-      img: "",
+      img: "prueba.png",
       role: "UI Desing"
     },
-    tags: ["New", 1, "Status"],
+    tags: ["New", 1, "Status", "Prueba", 457645, "Elementos", "cantidad", "secciones"],
     state: "done",
   },
   {
@@ -67,7 +67,7 @@ const arraytasks = [
     resume: "Esta es la sexta",
     avatr: {
       name: "Ux Desing",
-      img: "",
+      img: "prueba.png",
       role: "UI Desing"
     },
     tags: ["New", 1, "Status"],
